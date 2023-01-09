@@ -19,3 +19,4 @@ test-coverage:
 test-debug:
 	npm run test-debug
 	
+.PHONY: test
