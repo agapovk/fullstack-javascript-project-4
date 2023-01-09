@@ -1,10 +1,10 @@
 beforeAll(() => {
-	console.log('before All')
-})
+  console.log('before All');
+});
 
 describe('+ case', () => {
-	test('test name', () => {
-		const file = 'abc'
-		expect(file).toEqual('abc')
-	})
-})
+  test('testname', () => {
+    const file = 'abc';
+    expect(file).toEqual('abc');
+  });
+});

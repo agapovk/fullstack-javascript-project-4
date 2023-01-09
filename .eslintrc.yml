@@ -3,6 +3,7 @@ root: true
 
 plugins:
   - jest
+  - prettier
   # - babel
 
 env:
