@@ -1,8 +1,8 @@
 install: 
 	npm ci
 
-# publish: 
-# 	npm publish --dry-run
+publish: 
+	npm publish --dry-run
 
 link:
 	npm link
@@ -10,13 +10,12 @@ link:
 lint:
 	npx eslint .
 
-# test:
-# 	npm test
+test:
+	npm test
 
-# test-coverage:
-# 	npm test -- --coverage --coverageProvider=v8
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
 
-# test-debug:
-# 	npm run test-debug
+test-debug:
+	npm run test-debug
 	
-# .PHONY: test
