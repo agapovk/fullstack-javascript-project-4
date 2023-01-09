@@ -1,5 +1,6 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable no-unused-vars */
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import axios from 'axios';
 
 // TO utils?
@@ -11,11 +12,15 @@ function convertUrl(url) {
     .concat('.html');
 }
 
-export default async function pageLoader(url, output = process.cwd()) {
+export default async function pageLoader(url, output = null) {
   // To Promises
   const { data } = await axios.get(url);
+  const path =
+    output === null
+      ? process.cwd().concat(`/${convertUrl(url)}`)
+      : process.cwd().concat(`${output}/${convertUrl(url)}`);
+  const createFile = await writeFile(path, data);
+  const file = await readFile(convertUrl(url), { encoding: 'utf8' });
 
-  const createFile = await writeFile(convertUrl(url), data);
-
-  console.log('created?!');
+  console.log(file);
 }

@@ -8,7 +8,7 @@ const program = new Command();
 program
   .description('Page loader utility')
   .version('1.0.1', '-V, --version', 'output the version number')
-  .option('-o --output [dir]', 'output dir', process.cwd())
+  .option('-o --output [dir]', 'output dir')
   .arguments('<url>')
   .action((url, option) => {
     pageLoader(url, option.output);
